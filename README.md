@@ -50,3 +50,34 @@ test('async tesing', async () => {
   expect(output).toHaveTextContent("Let's Go Rangers")
 })
 ```
+
+## Events
+
+**fireEvent** triggers DOM event
+
+```javascript
+import {fireEvent} from '@testing-library/react'
+
+const btnIncrement = screen.getByText('Add')
+fireEvent.click(btnIncrement) || fireEvent(btnIncrement,'click;)
+```
+
+[See all supported events](https://github.com/testing-library/dom-testing-library/blob/main/src/event-map.js)
+
+## Custom Hooks
+
+`npm install @testing-library/react-hooks --save-dev`
+
+```javascript
+import { renderHook, act } from '@testing-library/react-hooks'
+
+test('testing custom hook', () => {
+  const { result } = renderHook(() => useCounter())
+  act(() => {
+    result.current.increment()
+  })
+  expect(result.current.count).toBe(1)
+})
+```
+
+[Hooks testing library api](https://react-hooks-testing-library.com/)
