@@ -9,7 +9,7 @@ In the project directory, you can run:
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Targerting Nodes
+## Targeting Nodes
 
 |Queries | No Match | 1 Match | 1+ Match | Await |
 |--------|----------|---------|----------|-------|
@@ -44,7 +44,7 @@ const btnIncrement = screen.getByText('Add')
 ```javascript
 import { render, screen, waitFor } from '@testing-library/react'
 
-test('async tesing', async () => {
+test('async testing', async () => {
   render(<APIComponent />)
   const output = await waitFor(() => screen.getByRole('contentinfo'))
   expect(output).toHaveTextContent("Let's Go Rangers")
